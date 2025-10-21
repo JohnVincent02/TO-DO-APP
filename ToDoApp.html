@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>To-Do App</title>
     <style>
-        * {
+        body{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -13,21 +13,13 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0882e6 0%, #03ec0f 100%);
+
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 500px;
-            padding: 40px;
         }
 
         h1 {
@@ -54,12 +46,12 @@
 
         #taskInput:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #fafafc;
         }
 
         #addBtn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f3d007 0%, #e97407 100%);
             color: white;
             border: none;
             border-radius: 10px;
@@ -71,7 +63,7 @@
 
         #addBtn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(230, 247, 2, 0.4);
         }
 
         #addBtn:active {
@@ -121,16 +113,6 @@
             animation: slideIn 0.3s ease;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
         .todo-item:hover {
             background: #f0f0f0;
@@ -179,29 +161,22 @@
         .empty-state {
             text-align: center;
             padding: 40px;
-            color: #999;
+            color: #030303;
             font-size: 18px;
         }
 
-        .stats {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #e0e0e0;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📝 To-Do List</h1>
+        <h1>To-Do App</h1>
         
         <div class="input-container">
             <input 
                 type="text" 
                 id="taskInput" 
-                placeholder="Add a new task..."
+                placeholder="Add a new task"
                 onkeypress="if(event.key === 'Enter') addTask()"
             >
             <button id="addBtn" onclick="addTask()">Add</button>
@@ -218,7 +193,7 @@
         <div class="stats" id="stats"></div>
     </div>
 
-    <!-- ✅ External JS file linked here -->
-    <script src="script.js"></script>
+
+    <script src="todo.js"></script>
 </body>
 </html>
