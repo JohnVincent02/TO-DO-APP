@@ -78,14 +78,4 @@ function renderTasks() {
     updateStats();
 }
 
-function updateStats() {
-    const total = tasks.length;
-    const completed = tasks.filter(task => task.completed).length;
-    const active = total - completed;
-
-    document.getElementById('stats').innerHTML = 
-        `Total: ${total} | Active: ${active} | Completed: ${completed}`;
-}
-
-// Initial render
 renderTasks();
